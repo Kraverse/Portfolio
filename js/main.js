@@ -82,29 +82,124 @@ TECH_STACK.forEach((t) => {
   techList.appendChild(li);
 });
 
-/* ---------- Render project cards ---------- */
+/* ---------- Projects: filter pills + cards + detail modal ---------- */
 const grid = document.getElementById("project-grid");
-PROJECTS.forEach((p) => {
+const filterBar = document.getElementById("project-filters");
+
+/* Filter pills */
+FILTERS.forEach((f, i) => {
+  const btn = document.createElement("button");
+  btn.type = "button";
+  btn.className = "filter-pill" + (i === 0 ? " active" : "");
+  btn.textContent = f;
+  btn.setAttribute("aria-pressed", String(i === 0));
+  btn.addEventListener("click", () => {
+    filterBar.querySelectorAll(".filter-pill").forEach((b) => {
+      b.classList.remove("active");
+      b.setAttribute("aria-pressed", "false");
+    });
+    btn.classList.add("active");
+    btn.setAttribute("aria-pressed", "true");
+    applyFilter(f);
+  });
+  filterBar.appendChild(btn);
+});
+
+function applyFilter(filter) {
+  grid.querySelectorAll(".project-card").forEach((card) => {
+    const show = filter === "All" || card.dataset.tags.split("|").includes(filter);
+    card.classList.toggle("hidden", !show);
+  });
+}
+
+/* Card builder */
+function buildCard(p, index) {
   const card = document.createElement("article");
   card.className = "project-card reveal";
-  const href = p.link || "https://github.com/Kraverse";
-  const external = p.link ? ' target="_blank" rel="noopener noreferrer"' : "";
+  card.dataset.tags = p.tags.join("|");
+  card.dataset.index = index;
   card.innerHTML = `
     <div class="project-visual">
-      ${p.highlight ? `<span class="project-badge">${p.highlight}</span>` : ""}
+      <span class="project-badge ${p.live ? "badge-live" : ""}"><span class="badge-dot" aria-hidden="true"></span>${p.status}</span>
       <div class="visual-art">${projectVisual(p.visual)}</div>
     </div>
     <div class="project-body">
+      <p class="project-category">${p.category}</p>
       <div class="project-title-row">
         <h3 class="project-title">${p.title}</h3>
-        <a class="arrow-btn" href="${href}"${external} aria-label="Open ${p.title} project">
+        <button type="button" class="arrow-btn" data-open-modal="${index}" aria-label="View details of ${p.title}">
           <span aria-hidden="true">↗</span>
-        </a>
+        </button>
       </div>
       <p class="project-desc">${p.description}</p>
-      <p class="project-tech">${p.category} · ${p.tech.join(" / ")}</p>
+      <ul class="tech-chips" aria-label="Technologies used">
+        ${p.tech.map((t) => `<li>${t}</li>`).join("")}
+      </ul>
+      <div class="project-ctas">
+        ${p.live ? `<a class="mini-btn mini-primary" href="${p.link}" target="_blank" rel="noopener noreferrer">Live demo <span aria-hidden="true">→</span></a>` : ""}
+        <a class="mini-btn" href="${p.github}" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <button type="button" class="mini-btn mini-ghost" data-open-modal="${index}">Details</button>
+      </div>
     </div>`;
-  grid.appendChild(card);
+  return card;
+}
+
+PROJECTS.forEach((p, i) => grid.appendChild(buildCard(p, i)));
+
+/* ---------- Project detail modal ---------- */
+const modal = document.getElementById("project-modal");
+const modalDialog = modal.querySelector(".modal-dialog");
+const modalBody = modal.querySelector(".modal-body");
+let lastFocused = null;
+
+function openModal(index) {
+  const p = PROJECTS[index];
+  modalBody.innerHTML = `
+    <p class="project-category">${p.category}</p>
+    <h3 id="modal-title" class="modal-title">${p.title}</h3>
+    <p class="modal-status"><span class="badge-dot" aria-hidden="true"></span>${p.status}</p>
+    <div class="modal-visual">${projectVisual(p.visual)}</div>
+    <p class="modal-overview">${p.overview}</p>
+    <div class="modal-block"><h4>Problem</h4><p>${p.problem}</p></div>
+    <div class="modal-block"><h4>Solution</h4><p>${p.solution}</p></div>
+    <div class="modal-block"><h4>AI / ML Components</h4><p>${p.aiComponents}</p></div>
+    <div class="modal-block"><h4>Key Features</h4><ul>${p.features.map((f) => `<li>${f}</li>`).join("")}</ul></div>
+    <div class="modal-block"><h4>Tech Stack</h4>
+      <ul class="tech-chips">${p.tech.map((t) => `<li>${t}</li>`).join("")}</ul>
+    </div>
+    <div class="modal-ctas">
+      ${p.live ? `<a class="btn btn-primary" href="${p.link}" target="_blank" rel="noopener noreferrer">Live demo <span aria-hidden="true">→</span></a>` : ""}
+      <a class="btn btn-outline" href="${p.github}" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+    </div>`;
+  lastFocused = document.activeElement;
+  modal.classList.add("open");
+  document.body.style.overflow = "hidden";
+  modalDialog.focus();
+}
+
+function closeModal() {
+  modal.classList.remove("open");
+  document.body.style.overflow = "";
+  if (lastFocused) lastFocused.focus();
+}
+
+document.addEventListener("click", (e) => {
+  const opener = e.target.closest("[data-open-modal]");
+  if (opener) openModal(Number(opener.dataset.openModal));
+});
+modal.addEventListener("click", (e) => {
+  if (e.target === modal || e.target.closest(".modal-close")) closeModal();
+});
+document.addEventListener("keydown", (e) => {
+  if (!modal.classList.contains("open")) return;
+  if (e.key === "Escape") closeModal();
+  if (e.key === "Tab") {
+    const focusables = modalDialog.querySelectorAll("a[href], button");
+    const first = focusables[0];
+    const last = focusables[focusables.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  }
 });
 
 /* ---------- Render skill groups ---------- */

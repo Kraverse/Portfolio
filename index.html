@@ -104,6 +104,7 @@
           <a href="https://github.com/Kraverse" target="_blank" rel="noopener noreferrer" class="btn btn-outline">View all projects <span aria-hidden="true">→</span></a>
         </div>
 
+        <div class="filter-bar" id="project-filters" role="group" aria-label="Filter projects by category"></div>
         <div class="project-grid" id="project-grid"></div>
 
         <!-- Featured project -->
@@ -223,6 +224,14 @@
       </div>
     </div>
   </footer>
+
+  <!-- Project detail modal -->
+  <div class="modal" id="project-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-dialog" tabindex="-1">
+      <button type="button" class="modal-close" aria-label="Close project details">×</button>
+      <div class="modal-body"></div>
+    </div>
+  </div>
 
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
