@@ -2,7 +2,7 @@
 
 Personal portfolio website for **Kartik Suresh Katke** — AI/ML Engineer & Full-Stack Developer, Computer Science Engineering student (AI & ML) at Bharat College of Engineering, University of Mumbai.
 
-**GitHub:** https://github.com/Kraverse
+**Link:** [https://github.com/Kraverse](https://kraverse.github.io/Portfolio/)
 
 ## Features
 
