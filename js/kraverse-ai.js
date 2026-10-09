@@ -1,6 +1,8 @@
 (() => {
   const API_BASE = 'https://kraverse-ai-api.onrender.com';
-  const apiUrl = (window.KRAVERSE_API_URL || localStorage.getItem('kraverse-api-url') || API_BASE).replace(/\/$/, '');
+  let savedApiUrl = '';
+  try { savedApiUrl = localStorage.getItem('kraverse-api-url') || ''; } catch (_) {}
+  const apiUrl = (window.KRAVERSE_API_URL || savedApiUrl || API_BASE).replace(/\/$/, '');
   const suggestions = [
     'Explain HelpDesk AI and its RAG architecture',
     'Which AI/ML projects has Kartik built?',
@@ -36,7 +38,7 @@
   const messages = panel.querySelector('.kraverse-ai-messages');
   const form = panel.querySelector('.kraverse-ai-form');
   const input = form.elements.message;
-  const interviewMode = form.parentElement.querySelector ? panel.querySelector('[name="interview_mode"]') : null;
+  const interviewMode = panel.querySelector('[name="interview_mode"]');
 
   const addMessage = (text, role) => {
     const item = document.createElement('div');
