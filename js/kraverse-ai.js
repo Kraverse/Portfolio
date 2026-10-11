@@ -30,6 +30,7 @@
       <form class="kraverse-ai-form"><input name="message" autocomplete="off" maxlength="12000" placeholder="Ask about a project, skill, or concept…" required aria-label="Your question" /><button type="submit" aria-label="Send message"><span>Send</span><span aria-hidden="true">↑</span></button></form>
       <div class="kraverse-ai-note"><span aria-hidden="true">◇</span> AI can make mistakes. Verify important details.</div>
     </div>`;
+  document.getElementById("kraverse-ai-fallback")?.remove();
   document.body.appendChild(panel);
 
   const toggle = panel.querySelector('.kraverse-ai-toggle');
