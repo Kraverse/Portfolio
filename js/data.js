@@ -14,7 +14,7 @@ const PROJECTS = [
     description: "Production-ready digital platform for a modern laundry service.",
     tech: ["Next.js", "React", "Tailwind CSS"],
     link: "https://dhobyexpert.vercel.app/",
-    github: "https://github.com/Kraverse",
+    github: "",
     visual: "dhobixpert",
     overview: "A complete digital experience for a modern laundry service — built as a real, deployed product rather than a demo.",
     problem: "Small service businesses often have no online presence: customers can't see services, pricing or request a pickup without calling.",
@@ -38,6 +38,40 @@ const PROJECTS = [
     solution: "A modern AI application architecture connecting a doctor-friendly interface with backend AI services.",
     aiComponents: "LLM integration, AI-assisted workflows, structured healthcare information handling and API-based AI services.",
     features: ["Doctor-focused workflow design", "AI-assisted information handling", "FastAPI backend architecture", "Modern web interface"],
+  },
+  {
+    title: "MedRAG-X",
+    category: "Generative AI · RAG · Research",
+    tags: ["Generative AI", "AI / ML", "RAG", "Healthcare"],
+    status: "Live Demo",
+    live: true,
+    description: "Research document assistant that grounds answers in retrieved passages and links claims to their sources.",
+    tech: ["Next.js", "FastAPI", "RAG", "FAISS", "FastEmbed"],
+    link: "https://medrag-x.pages.dev",
+    github: "https://github.com/Kraverse/MedRag-X",
+    visual: "medrag",
+    overview: "An educational research assistant for exploring provided documents. Answers cite retrieved passages and the app is not intended for medical diagnosis or advice.",
+    problem: "Searching long research documents manually takes time, and generated answers are difficult to verify without clear evidence.",
+    solution: "The application extracts and chunks documents, retrieves relevant passages, and returns answers linked to those sources.",
+    aiComponents: "BGE-small embeddings, FAISS vector search, and language-model responses grounded in numbered evidence passages.",
+    features: ["PDF, TXT, and Markdown documents", "Semantic retrieval over document passages", "Answers with source citations", "Educational use; not clinical advice"],
+  },
+  {
+    title: "RepoDoctor AI",
+    category: "AI Developer Tool · Local Models",
+    tags: ["AI / ML", "Developer Tools"],
+    status: "Early MVP",
+    live: false,
+    description: "Local-first developer tool for code debugging and simplification, with a static Python syntax check.",
+    tech: ["Python", "FastAPI", "Ollama", "Qwen2.5-Coder"],
+    link: "https://github.com/Kraverse/RepoDoctor-AI",
+    github: "https://github.com/Kraverse/RepoDoctor-AI",
+    visual: "repodoctor",
+    overview: "An experimental tool that sends debugging and code-trimming requests to a local Ollama model. Suggestions can be incorrect; its initial verifier checks Python syntax only.",
+    problem: "Debugging and simplifying code involves repeated manual steps, while a proposed patch still needs careful review.",
+    solution: "A FastAPI service connects a developer workflow to a local model and runs a static Python syntax check on proposed code.",
+    aiComponents: "Local Ollama model integration using qwen2.5-coder:1.5b by default. The syntax verifier does not establish behavioral correctness.",
+    features: ["Debug and code-trimming workflows", "Local Ollama model integration", "Static Python syntax check", "No arbitrary code execution in the initial verifier"],
   },
   {
     title: "HelpDesk AI",
@@ -160,12 +194,12 @@ const PROJECTS = [
   },
 ];
 
-const FILTERS = ["All", "AI / ML", "Generative AI", "Healthcare", "Full Stack", "Production"];
+const FILTERS = ["All", "AI / ML", "Generative AI", "RAG", "Healthcare", "Developer Tools", "Full Stack", "Production"];
 
-const TECH_STACK = ["Python", "React", "Next.js", "FastAPI", "LangChain", "Supabase", "GitHub", "Vercel"];
+const TECH_STACK = ["Python", "RAG", "FAISS", "Ollama", "React", "Next.js", "FastAPI", "LangChain", "Supabase", "GitHub", "Vercel"];
 
 const SKILL_GROUPS = [
-  { group: "AI / ML", skills: ["Python", "Machine Learning", "Generative AI", "LLMs", "RAG", "LangChain", "Whisper"] },
+  { group: "AI / ML", skills: ["Python", "Machine Learning", "Generative AI", "LLMs", "RAG", "Embeddings", "LangChain", "Whisper"] },
   { group: "Frontend", skills: ["React", "Next.js", "JavaScript", "TypeScript", "Tailwind CSS", "Streamlit"] },
   { group: "Backend", skills: ["Python", "FastAPI", "REST APIs", "Node.js"] },
   { group: "Data / Infrastructure", skills: ["Supabase", "PostgreSQL", "MongoDB", "Git", "GitHub", "Vercel", "Render"] },

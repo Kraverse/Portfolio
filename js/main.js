@@ -70,6 +70,91 @@ function projectVisual(type) {
         <rect x="95" y="215" width="200" height="7" rx="3.5" fill="#eaddd2"/>
         <rect x="95" y="90" width="80" height="10" rx="5" fill="#1c1a17" opacity="0.85"/>
       </svg>`,
+    medrag: `
+      <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Abstract visual representing document retrieval and cited answers for MedRAG-X">
+        <rect width="400" height="300" fill="#fbede2"/>
+        <circle cx="335" cy="65" r="92" fill="#f5b8b0" opacity="0.42"/>
+        <rect x="54" y="42" width="178" height="216" rx="16" fill="#fffdfb" stroke="#eaddd2" stroke-width="2"/>
+        <rect x="77" y="70" width="94" height="12" rx="6" fill="#e0512a"/>
+        <rect x="77" y="102" width="132" height="8" rx="4" fill="#eaddd2"/>
+        <rect x="77" y="121" width="118" height="8" rx="4" fill="#eaddd2"/>
+        <rect x="77" y="154" width="132" height="22" rx="7" fill="#fbeee4" stroke="#f0653c"/>
+        <rect x="87" y="162" width="82" height="6" rx="3" fill="#e0512a"/>
+        <rect x="77" y="190" width="124" height="8" rx="4" fill="#eaddd2"/>
+        <rect x="244" y="121" width="112" height="100" rx="16" fill="#1c1a17"/>
+        <path d="M266 154h66M266 171h49" stroke="#fffdfb" stroke-width="7" stroke-linecap="round" opacity=".72"/>
+        <circle cx="300" cy="202" r="13" fill="#f0653c"/>
+        <path d="M295 202l4 4 7-8" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>`,
+    repodoctor: `
+      <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Abstract visual representing local code debugging for RepoDoctor AI">
+        <rect width="400" height="300" fill="#f8e8df"/>
+        <circle cx="68" cy="238" r="98" fill="#f5b8b0" opacity=".45"/>
+        <rect x="54" y="52" width="292" height="196" rx="18" fill="#1c1a17"/>
+        <path d="M54 91h292" stroke="#54463d" stroke-width="2"/>
+        <circle cx="78" cy="72" r="6" fill="#f0653c"/><circle cx="99" cy="72" r="6" fill="#f8c8a8"/><circle cx="120" cy="72" r="6" fill="#8d7c6e"/>
+        <path d="M83 123h46M83 145h92M83 167h67" stroke="#f8c8a8" stroke-width="7" stroke-linecap="round" opacity=".8"/>
+        <path d="M186 123h72M198 145h49" stroke="#f0653c" stroke-width="7" stroke-linecap="round"/>
+        <rect x="263" y="171" width="58" height="42" rx="12" fill="#fffdfb"/>
+        <path d="M279 193l8 8 17-19" stroke="#e0512a" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>`,
+    medrec: `
+      <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Abstract visual representing an AI-assisted medical records workflow">
+        <rect width="400" height="300" fill="#fbeee4"/>
+        <circle cx="326" cy="64" r="85" fill="#f5b8b0" opacity=".4"/>
+        <rect x="72" y="46" width="182" height="210" rx="16" fill="#fffdfb" stroke="#eaddd2" stroke-width="2"/>
+        <rect x="96" y="74" width="87" height="11" rx="5.5" fill="#e0512a"/>
+        <rect x="96" y="103" width="130" height="8" rx="4" fill="#eaddd2"/>
+        <rect x="96" y="121" width="112" height="8" rx="4" fill="#eaddd2"/>
+        <rect x="96" y="154" width="128" height="45" rx="10" fill="#fbeee4"/>
+        <circle cx="289" cy="178" r="45" fill="#1c1a17"/>
+        <path d="M289 158v40M269 178h40" stroke="#f8c8a8" stroke-width="8" stroke-linecap="round"/>
+      </svg>`,
+    kravoice: `
+      <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Abstract visual representing audio transcription with KraVoice">
+        <rect width="400" height="300" fill="#fbeee4"/>
+        <circle cx="330" cy="65" r="88" fill="#f8c8a8" opacity=".55"/>
+        <rect x="54" y="62" width="292" height="176" rx="24" fill="#fffdfb" stroke="#eaddd2" stroke-width="2"/>
+        <circle cx="111" cy="150" r="30" fill="#e0512a"/>
+        <path d="M105 137v25M117 137v25M97 150v2M125 150v2" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+        <path d="M160 150h12l9-27 13 56 12-40 11 23 11-38 13 53 11-27h22" fill="none" stroke="#1c1a17" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>`,
+    kraverseai: `
+      <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Abstract visual representing a portfolio AI assistant">
+        <rect width="400" height="300" fill="#fbede2"/>
+        <circle cx="322" cy="224" r="96" fill="#f5b8b0" opacity=".48"/>
+        <rect x="62" y="58" width="218" height="112" rx="20" fill="#fffdfb" stroke="#eaddd2" stroke-width="2"/>
+        <rect x="87" y="86" width="124" height="9" rx="4.5" fill="#eaddd2"/>
+        <rect x="87" y="108" width="162" height="9" rx="4.5" fill="#f8c8a8"/>
+        <rect x="158" y="151" width="180" height="90" rx="18" fill="#1c1a17"/>
+        <path d="M184 181h112M184 202h84" stroke="#fffdfb" stroke-width="7" stroke-linecap="round" opacity=".7"/>
+        <path d="M318 76l7 15 16 2-12 10 4 16-15-8-14 8 3-16-12-10 16-2z" fill="#e0512a"/>
+      </svg>`,
+    chronos: `
+      <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Abstract visual representing a healthcare queue workflow">
+        <rect width="400" height="300" fill="#f9e9df"/>
+        <circle cx="66" cy="62" r="78" fill="#f5b8b0" opacity=".42"/>
+        <rect x="55" y="54" width="290" height="192" rx="18" fill="#fffdfb" stroke="#eaddd2" stroke-width="2"/>
+        <path d="M98 104h199M98 151h199M98 198h199" stroke="#eaddd2" stroke-width="4" stroke-linecap="round"/>
+        <circle cx="110" cy="104" r="14" fill="#e0512a"/><circle cx="170" cy="151" r="14" fill="#f8c8a8"/><circle cx="254" cy="198" r="14" fill="#1c1a17"/>
+        <rect x="205" y="94" width="77" height="9" rx="4.5" fill="#f8c8a8"/>
+        <rect x="201" y="142" width="89" height="9" rx="4.5" fill="#eaddd2"/>
+        <rect x="126" y="189" width="81" height="9" rx="4.5" fill="#eaddd2"/>
+      </svg>`,
+    pdf: `
+      <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Abstract visual representing document question answering">
+        <rect width="400" height="300" fill="#fbede2"/>
+        <circle cx="340" cy="70" r="82" fill="#f8c8a8" opacity=".5"/>
+        <rect x="72" y="48" width="162" height="207" rx="16" fill="#fffdfb" stroke="#eaddd2" stroke-width="2"/>
+        <path d="M185 48v50h49" fill="#fbeee4" stroke="#eaddd2" stroke-width="2"/>
+        <rect x="94" y="117" width="114" height="9" rx="4.5" fill="#e0512a"/>
+        <rect x="94" y="143" width="114" height="7" rx="3.5" fill="#eaddd2"/>
+        <rect x="94" y="161" width="100" height="7" rx="3.5" fill="#eaddd2"/>
+        <rect x="94" y="194" width="114" height="22" rx="8" fill="#fbeee4"/>
+        <circle cx="276" cy="171" r="42" fill="#1c1a17"/>
+        <circle cx="276" cy="165" r="14" fill="none" stroke="#f8c8a8" stroke-width="6"/>
+        <path d="M287 177l17 17" stroke="#f8c8a8" stroke-width="7" stroke-linecap="round"/>
+      </svg>`,
   };
   return arts[type] || arts.dhobixpert;
 }
@@ -85,6 +170,12 @@ TECH_STACK.forEach((t) => {
 /* ---------- Projects: filter pills + cards + detail modal ---------- */
 const grid = document.getElementById("project-grid");
 const filterBar = document.getElementById("project-filters");
+const showcaseOrder = ["HelpDesk AI", "MedRAG-X", "RepoDoctor AI", "DhobiXpert"];
+const showcaseProjects = [...PROJECTS].sort((a, b) => {
+  const indexA = showcaseOrder.indexOf(a.title);
+  const indexB = showcaseOrder.indexOf(b.title);
+  return (indexA < 0 ? showcaseOrder.length : indexA) - (indexB < 0 ? showcaseOrder.length : indexB);
+});
 
 /* Filter pills */
 FILTERS.forEach((f, i) => {
@@ -137,14 +228,14 @@ function buildCard(p, index) {
       </ul>
       <div class="project-ctas">
         ${p.live ? `<a class="mini-btn mini-primary" href="${p.link}" target="_blank" rel="noopener noreferrer">Live demo <span aria-hidden="true">→</span></a>` : ""}
-        <a class="mini-btn" href="${p.github}" target="_blank" rel="noopener noreferrer">GitHub</a>
+        ${p.github ? `<a class="mini-btn" href="${p.github}" target="_blank" rel="noopener noreferrer" aria-label="Open the ${p.title} repository on GitHub">GitHub</a>` : ""}
         <button type="button" class="mini-btn mini-ghost" data-open-modal="${index}">Details</button>
       </div>
     </div>`;
   return card;
 }
 
-PROJECTS.forEach((p, i) => grid.appendChild(buildCard(p, i)));
+showcaseProjects.forEach((p, i) => grid.appendChild(buildCard(p, i)));
 
 /* ---------- Project detail modal ---------- */
 const modal = document.getElementById("project-modal");
@@ -153,7 +244,7 @@ const modalBody = modal.querySelector(".modal-body");
 let lastFocused = null;
 
 function openModal(index) {
-  const p = PROJECTS[index];
+  const p = showcaseProjects[index];
   modalBody.innerHTML = `
     <p class="project-category">${p.category}</p>
     <h3 id="modal-title" class="modal-title">${p.title}</h3>
@@ -169,7 +260,7 @@ function openModal(index) {
     </div>
     <div class="modal-ctas">
       ${p.live ? `<a class="btn btn-primary" href="${p.link}" target="_blank" rel="noopener noreferrer">Live demo <span aria-hidden="true">→</span></a>` : ""}
-      <a class="btn btn-outline" href="${p.github}" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+      ${p.github ? `<a class="btn btn-outline" href="${p.github}" target="_blank" rel="noopener noreferrer" aria-label="Open the ${p.title} repository on GitHub">View on GitHub</a>` : ""}
     </div>`;
   lastFocused = document.activeElement;
   modal.classList.add("open");
@@ -223,16 +314,26 @@ LEARNING.forEach((item) => {
 /* ---------- Mobile navigation ---------- */
 const toggle = document.getElementById("nav-toggle");
 const menu = document.getElementById("nav-menu");
+const closeMenu = () => {
+  menu.classList.remove("open");
+  toggle.setAttribute("aria-expanded", "false");
+};
 toggle.addEventListener("click", () => {
   const open = menu.classList.toggle("open");
   toggle.setAttribute("aria-expanded", String(open));
 });
 menu.querySelectorAll("a").forEach((a) =>
-  a.addEventListener("click", () => {
-    menu.classList.remove("open");
-    toggle.setAttribute("aria-expanded", "false");
-  })
+  a.addEventListener("click", closeMenu)
 );
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && menu.classList.contains("open")) {
+    closeMenu();
+    toggle.focus();
+  }
+});
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 768 && menu.classList.contains("open")) closeMenu();
+});
 
 /* ---------- Scroll reveal ---------- */
 const revealEls = document.querySelectorAll(".reveal");
